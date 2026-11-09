@@ -1,10 +1,11 @@
-# [Project name]
+# Pexly
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Pexly is a non-custodial crypto marketplace for digital services and everyday purchases.
 
 ## Run & Operate
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/pexo run dev` — run the Pexly web app
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
@@ -34,7 +35,9 @@ _Describe the high-level user-facing capabilities of this app once they exist._
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Preserve existing page visuals and content when migrating HTML; do not invent a new design.
+- Use React + TypeScript JSX, not iframes or unsafe HTML injection.
+- For homepage interactions, do not add external CDN scripts or new third-party packages; use existing local dependencies or browser-native APIs.
 
 ## Gotchas
 

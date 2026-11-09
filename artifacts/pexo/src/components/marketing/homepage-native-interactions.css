@@ -1,0 +1,25 @@
+.current-source-page-home .home-native-swiper::-webkit-scrollbar {
+  display: none;
+}
+
+.current-source-page-home .home-native-swiper {
+  cursor: grab;
+  overscroll-behavior-x: contain;
+}
+
+.current-source-page-home .home-native-swiper.home-native-is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.current-source-page-home .home-native-marquee {
+  user-select: none;
+}
+
+.current-source-page-home .home-native-marquee .splide__track {
+  cursor: grab;
+}
+
+.current-source-page-home .home-native-marquee.home-native-is-dragging .splide__track {
+  cursor: grabbing;
+}
