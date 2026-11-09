@@ -83,6 +83,15 @@ function handlePageClick(event: MouseEvent<HTMLDivElement>) {
   if (dropdownToggle) {
     const dropdown = dropdownToggle.closest<HTMLElement>(".w-dropdown");
     const open = !dropdown?.classList.contains("w--open");
+    const faqGroup = dropdown?.closest<HTMLElement>(".faq-qa-wrapper");
+    faqGroup?.querySelectorAll<HTMLElement>(".faq-item.w--open").forEach((item) => {
+      if (item === dropdown) return;
+      item.classList.remove("w--open");
+      item.querySelector(".faq-question-block")?.setAttribute("aria-expanded", "false");
+      const answer = item.querySelector<HTMLElement>(".faq-ans-block");
+      answer?.classList.remove("w--open");
+      if (answer) answer.hidden = true;
+    });
     dropdown?.classList.toggle("w--open", open);
     const answer = dropdown?.querySelector<HTMLElement>(".w-dropdown-list");
     answer?.classList.toggle("w--open", open);

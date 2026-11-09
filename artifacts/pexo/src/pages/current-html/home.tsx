@@ -2129,7 +2129,7 @@ export function PexlyHomepage() {
                 </div>
                 <div className={"pc-slider-wrapper"}>
                   <div className={"payment-cards-block"}>
-                    <div className={"swiper cr-card"}>
+                    <div className={"swiper cr-card"} role={"region"} aria-label={"Gift card and digital goods categories"} tabIndex={0}>
                       <div className={"swiper-wrapper disposable-card-wrapper"}>
                         <div className={"swiper-slide"}>
                           <div className={"payment-card-content"}>
@@ -2481,7 +2481,7 @@ export function PexlyHomepage() {
                             </svg>
                           </div>
                         </div>
-                        <nav id={"home-faq-answer-1"} aria-labelledby={"home-faq-question-1"} role={"region"} className={"faq-ans-block w-dropdown-list"}>
+                        <nav id={"home-faq-answer-1"} aria-labelledby={"home-faq-question-1"} role={"region"} hidden={true} className={"faq-ans-block w-dropdown-list"}>
                           <div className={"faq-ans-text-block"}>
                             <p className={"p-regular"}>
                               {"Choose a product, connect your wallet and approve the payment. Pexly is non-custodial, so your funds move straight from your wallet and never sit with us."}
@@ -2505,7 +2505,7 @@ export function PexlyHomepage() {
                             </svg>
                           </div>
                         </div>
-                        <nav id={"home-faq-answer-2"} aria-labelledby={"home-faq-question-2"} role={"region"} className={"faq-ans-block w-dropdown-list"}>
+                        <nav id={"home-faq-answer-2"} aria-labelledby={"home-faq-question-2"} role={"region"} hidden={true} className={"faq-ans-block w-dropdown-list"}>
                           <div className={"faq-ans-text-block"}>
                             <p className={"p-regular"}>
                               {"You can pay with popular coins such as BTC, ETH, USDT and USDC. Available coins are shown at checkout."}
@@ -2529,7 +2529,7 @@ export function PexlyHomepage() {
                             </svg>
                           </div>
                         </div>
-                        <nav id={"home-faq-answer-3"} aria-labelledby={"home-faq-question-3"} role={"region"} className={"faq-ans-block w-dropdown-list"}>
+                        <nav id={"home-faq-answer-3"} aria-labelledby={"home-faq-question-3"} role={"region"} hidden={true} className={"faq-ans-block w-dropdown-list"}>
                           <div className={"faq-ans-text-block"}>
                             <p className={"p-regular"}>
                               {"You can browse freely and connect a wallet at checkout. No bank account or card is required."}
@@ -2553,7 +2553,7 @@ export function PexlyHomepage() {
                             </svg>
                           </div>
                         </div>
-                        <nav id={"home-faq-answer-4"} aria-labelledby={"home-faq-question-4"} role={"region"} className={"faq-ans-block w-dropdown-list"}>
+                        <nav id={"home-faq-answer-4"} aria-labelledby={"home-faq-question-4"} role={"region"} hidden={true} className={"faq-ans-block w-dropdown-list"}>
                           <div className={"faq-ans-text-block"}>
                             <p className={"p-regular"}>
                               {"Pick a country and network, enter the phone number and pay with crypto. Airtime or data is delivered within moments."}
@@ -2577,7 +2577,7 @@ export function PexlyHomepage() {
                             </svg>
                           </div>
                         </div>
-                        <nav id={"home-faq-answer-5"} aria-labelledby={"home-faq-question-5"} role={"region"} className={"faq-ans-block w-dropdown-list"}>
+                        <nav id={"home-faq-answer-5"} aria-labelledby={"home-faq-question-5"} role={"region"} hidden={true} className={"faq-ans-block w-dropdown-list"}>
                           <div className={"faq-ans-text-block"}>
                             <p className={"p-regular"}>
                               {"Payments for physical orders are held in escrow and released only after you confirm delivery. Digital orders are delivered right after payment."}
@@ -2601,7 +2601,7 @@ export function PexlyHomepage() {
                             </svg>
                           </div>
                         </div>
-                        <nav id={"home-faq-answer-6"} aria-labelledby={"home-faq-question-6"} role={"region"} className={"faq-ans-block w-dropdown-list"}>
+                        <nav id={"home-faq-answer-6"} aria-labelledby={"home-faq-question-6"} role={"region"} hidden={true} className={"faq-ans-block w-dropdown-list"}>
                           <div className={"faq-ans-text-block"}>
                             <p className={"p-regular"}>
                               {"Choose a verified seller, pay into escrow and follow the shipping updates. Confirm when it arrives and the seller gets paid."}

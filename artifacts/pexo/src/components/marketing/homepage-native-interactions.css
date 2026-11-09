@@ -23,3 +23,15 @@
 .current-source-page-home .home-native-marquee.home-native-is-dragging .splide__track {
   cursor: grabbing;
 }
+
+.current-source-page-home .faq-ans-block {
+  display: none;
+}
+
+.current-source-page-home .faq-ans-block.w--open {
+  display: block;
+}
+
+.current-source-page-home .faq-ans-block[hidden] {
+  display: none !important;
+}

@@ -81,7 +81,7 @@ function setupNativeSwiper(slider: HTMLElement): Cleanup {
   slider.style.scrollSnapType = "x mandatory";
   slider.style.scrollBehavior = "auto";
   slider.style.scrollbarWidth = "none";
-  slider.style.touchAction = "pan-y";
+  slider.style.touchAction = "pan-x pan-y";
 
   wrapper.style.display = "flex";
   wrapper.style.width = "100%";
@@ -125,7 +125,13 @@ function setupNativeSwiper(slider: HTMLElement): Cleanup {
   }
 
   function handlePointerDown(event: PointerEvent): void {
-    if (event.button !== 0 || (event.target instanceof Element && event.target.closest("a, button"))) return;
+    if (
+      event.pointerType === "touch" ||
+      event.button !== 0 ||
+      (event.target instanceof Element && event.target.closest("a, button"))
+    ) {
+      return;
+    }
 
     dragging = true;
     dragPointerId = event.pointerId;
@@ -217,7 +223,7 @@ function setupNativeMarquee(marquee: HTMLElement, reducedMotion: boolean): Clean
   let dragStartX = 0;
   let dragStartOffset = 0;
 
-  marquee.classList.add("home-native-marquee");
+  marquee.classList.add("home-native-marquee", "is-initialized", "is-rendered", "is-active");
   track.style.overflow = "hidden";
   track.style.touchAction = "pan-y";
   list.style.display = "flex";
@@ -308,6 +314,17 @@ function setupNativeMarquee(marquee: HTMLElement, reducedMotion: boolean): Clean
   }
 
   rebuildClones();
+  console.info("Homepage marquee layout", JSON.stringify({
+    list: list.className,
+    trackSize: [track.clientWidth, track.clientHeight],
+    cycleWidth,
+    slideSizes: originals.map((slide) => [
+      slide.getBoundingClientRect().width,
+      slide.getBoundingClientRect().height,
+      window.getComputedStyle(slide).width,
+    ]),
+    visibility: window.getComputedStyle(marquee).visibility,
+  }));
 
   const handleResize = () => {
     window.cancelAnimationFrame(resizeFrame);
@@ -334,7 +351,13 @@ function setupNativeMarquee(marquee: HTMLElement, reducedMotion: boolean): Clean
     track.removeEventListener("pointerup", finishPointerDrag);
     track.removeEventListener("pointercancel", finishPointerDrag);
     clones.forEach((clone) => clone.remove());
-    marquee.classList.remove("home-native-marquee", "home-native-is-dragging");
+    marquee.classList.remove(
+      "home-native-marquee",
+      "home-native-is-dragging",
+      "is-initialized",
+      "is-rendered",
+      "is-active",
+    );
     restoreInlineStyles(styles);
   };
 }
